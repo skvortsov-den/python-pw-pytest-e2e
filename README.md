@@ -1,8 +1,8 @@
-# E2E Tests with Python + Playwright + Pytest
+# E2E tests with python + playwright + pytest
 
 Framework for automated web application testing. Testing https://opensource-demo.orangehrmlive.com/ through API and UI
 
-## 🏗️ Architecture
+## Architecture
 
 - **Pytest** — runs tests and manages fixtures
 - **Playwright** — automates browser (clicks, form filling, checks)
@@ -11,7 +11,7 @@ Framework for automated web application testing. Testing https://opensource-demo
 - **Dataclass fixtures** — convenient access to testing objects
 - **Faker** — generates random test data
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 test-repo-python/
@@ -35,7 +35,7 @@ test-repo-python/
 └── README.md                       # Documentation
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 ```bash
@@ -68,7 +68,7 @@ python3 -m pytest -m test3 --headed  # Upload avatar
 python3 -m pytest -m test1
 ```
 
-## 💡 How it works
+## How it works
 
 ### Convenient access to objects
 ```python
@@ -93,7 +93,7 @@ def test_create_user_and_employee(api: Api, ui: Ui):
     ui.orange_pim.assert_employee_visible(user['employeeData']['firstName'])
 ```
 
-## 🎯 What we test
+## What we test
 
 | Test | What it does | Why needed |
 |------|-------------|------------|
@@ -133,11 +133,11 @@ PWDEBUG=console python3 -m pytest -m test1 --headed
 ```python
 def test_example(api: Api, ui: Ui):
     api.orange.auth()
-    page.pause()  # Stop for debugging
+    ui.page.pause()  # Stop for debugging
     ui.orange_page.goto()
 ```
 
-## 🤔 Why exactly this way?
+## Why exactly this way?
 
 ### API layer
 - **Faster** - API works faster than UI

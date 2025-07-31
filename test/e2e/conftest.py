@@ -12,6 +12,7 @@ class ApiFixtures:
 
 @dataclass
 class UiFixtures:
+    page: Page
     orange_page: OrangePageUi
     orange_pim: OrangePimUi
 
@@ -27,6 +28,7 @@ def api(context) -> ApiFixtures:
 def ui(page: Page) -> UiFixtures:
     """UI fixture for working with web pages"""
     return UiFixtures(
+        page=page,
         orange_page=OrangePageUi(page),
         orange_pim=OrangePimUi(page)
     )
